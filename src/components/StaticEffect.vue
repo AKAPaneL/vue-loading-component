@@ -1,32 +1,33 @@
 <template>
-    <div class="static">
-        <span class="loading-container">
-            <svg viewBox="25 25 50 50" class="loading__circular">
-                <circle cx="50" cy="50" r="13" fill="none"></circle>
-            </svg>
-        </span>
-    </div>
+    <span class="loading-container" :class="{'has_border':hasBorder}">
+        <svg viewBox="25 25 50 50" class="loading__circular">
+            <circle cx="50" cy="50" r="13" fill="none"></circle>
+        </svg>
+    </span>
 </template>
 <script>
-export default {}
+export default {
+  props: {
+    hasBorder: {
+      type: Boolean
+    }
+  }
+}
 </script>
 <style scoped>
-.static{
-    margin: 10px auto;
-}
 .loading-container{
     border-radius: 50%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
     height: 13.333vw;
     width: 13.333vw;
     animation: span-rotate 1.7s linear infinite;
+}
+.has_border{
+    background-color: #fff;
     box-shadow: 0vw 0vw 2.133vw  #cccccc;
 }
 .loading__circular {
-    display: block;
+    /* display: block; */
     width: 13.333vw;
     height: 13.333vw;
     color: rgb(220, 18, 99);

@@ -4,9 +4,10 @@
     <div class="main">
       <h3>效果演示</h3>
       <!-- static-effect静态演示 -->
+      <StaticEffect has-border/>
       <StaticEffect />
-      <!-- <h3>函数调用模式</h3> -->
-      <!-- <button class="">点击调用</button> -->
+      <h3>函数调用</h3>
+      <button class="use_loading_btn">点击调用</button>
     </div>
   </div>
 </template>
@@ -31,5 +32,17 @@ export default {
 }
 .main{
   padding: 16px 16px 0;
+}
+h3{
+  margin: 10px 0;
+}
+.use_loading_btn{
+  width: 100px;
+  height: 40px;
+  background-color: #5c6bc0;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 20px;
 }
 </style>
