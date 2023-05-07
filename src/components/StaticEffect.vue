@@ -1,5 +1,5 @@
 <template>
-    <span class="loading-container" :class="{'has_border':hasBorder}">
+    <span class="loading-container" :class="{'has_border':hasBorder}" v-if="visible">
         <svg viewBox="25 25 50 50" class="loading__circular">
             <circle cx="50" cy="50" r="13" fill="none"></circle>
         </svg>
@@ -10,7 +10,16 @@ export default {
   props: {
     hasBorder: {
       type: Boolean
+    },
+    visible: {
+      type: Boolean,
+      required: true
     }
+  },
+  created () {
+    window.addEventListener('scroll', () => {
+      console.log(1)
+    })
   }
 }
 </script>
